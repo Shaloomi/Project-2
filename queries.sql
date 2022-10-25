@@ -1,12 +1,12 @@
 CREATE TABLE "imdb_top_1000" (
     "film_name" VARCHAR(1050),
     "released_year" INT,
-    "runtime" INT,
+    "runtime" VARCHAR(30),
     "genre" VARCHAR(50),
     "imdb_rating" INT,
     "meta_score" INT,
     "director" VARCHAR(50),
-    "actors" VARCHAR(100),
+    "actors" VARCHAR(1050),
     "votes" BIGINT,
     "gross" money,
     CONSTRAINT "pk_imdb_top_1000" PRIMARY KEY (
