@@ -93,24 +93,25 @@ Results will be displayed.
 
 Create an ETL pipeline using Jupyter Notebooks and PostgreSQL from raw data to SQL database.
 
-* **Extract:** read data from multiple sources using Python. Data sourced from:
-	* **Kaggle:** - 2 files (academy_awards_1927-2015.csv) and (imdb_top_1000.csv)
-		* a IMDB Movies Dataset from The Movie Database containing movie details with 9964 thousand entries. 
-		* a dataset from The Academy Awards,1927-2015 containing what actors and films have received the most oscar. 
-* **Transform:** Clean and structure data using Pandas and regular expressions (RegEx) to achieve desired form. (i.e. using RegEx to parse data and transform text into numbers.
-	* Deleting bad data (corrupted or missing), removing duplicate rows, and consolidating columns.
-	* Using RegEx to parse data and transform text into numbers.
+### Extract 
+Import both raw csv files and convert them to pandas data frames so they may be transfomed and loaded into SQL later:
+ Both raw CSV's were: (academy_awards_1927-2015.csv) and (imdb_top_1000.csv).
+IMDB Movies Dataset from The Movie Database containing movie details with 9964 thousand entries. 
+a dataset from The Academy Awards,1927-2015 containing what actors and films have received the most oscar. 
+<img src="Resources/Image3.png" alt="Image1" width="770" height="530">
 
-<img src="Resources/Image3.png" alt="Image1" width="770" height="530"> 
+### Transform: 
+To start the transformation process we combined the star columns into 1 column of all actors called "actors". We then proceeded to drop all unnecessary columns (Overview, Certificate, Poster_Link and Star1-Star4). Next step was to strip the "min" off the right-hand side of the value in column Runtime column. Once we had all our required columns, we renamed the headers to better suit our data and to match the column headers in Postgres database. Next step was to check if there was any duplicate data in the film_name column. Once we identified there was, we removed the duplicate rows.
+The last step(s) in the transformation of the IMDB data is to change all relevant data types to a "INT" datatype. To convert the gross column data into INT type, first we had to replace the commas, found in the values, with no value (ie. Converted value 10,000 to 10000). Still on the gross column, we dropped the NaN values and replaced them with a zero value. We then dropped a value of "PG" found in the released year column with a zero value. And finally, we converted gross, released_year and runtime values into INT datatypes.
 
-* **Load:** Export transformed data into a database.
+The first step in transforming the Academy data was to convert the winner column to be Boolean values. We replaced all NaN values with False and the 1 values with True. We then proceeded to drop the first rows in the dataframe that had multiple year values and the we reset the index
+The raw data had some categories listed in the wrong columns: winner and film name. To rectify this we created a new df with the specific categories that have the data in the correct columns and then we rename the column headers to better suited column headers. We then created another df with the specific categories that have the data in the wrong columns. Then renamed the column headers for the second df BUT making sure the film_name and winner_name columns were swapped. Lastly we join the two df's together using the pandas concat method.
+Last steps, we drop all unnecessary columns and converted the ceremony_year column to INT datatype.
+<img src="Resources/Image4.png" alt="Image4" width="770" height="530">
 
-## Results
-<img src="Resources/Image4.png" alt="Image1" width="770" height="530"> 
-
-We were able to clean, merge the datasets and export the two new tables into PostgreSQL by using Python. 
-
-<img src="Resources/final_join.PNG" alt="final_join.PNG" width="770" height="530"> 
+### Load:
+First it connects to the user's SQL database using config for all personal data. Then created an engine to interact with the SQL database as well as an inspector. Then using the inspector to check if both the necessary tables exist within the SQL database. Then import both the imdb panda's data frame as well as the academy panda's data frame into the SQL database as 'imdb_top_1000' and 'academy_award_data' respectively. Then running a select statement to confirm the data has been properly imported. Then finally confirming that both interact with each other by using sqlalchemy to perform a join by joining the academy table and the IMDB table, joining all columns together.
+<img src="Resources/final_join1.png" alt="final_join1.png" width="770" height="530">
 
 ## Summary
 
@@ -127,3 +128,40 @@ Overall, this was a very dense topic to learn and complete in one week. The proc
 ## Creators
 
 Josh Martin, Peregrin Rayan, Udeshi Pereira - [https://github.com/Shaloomi/Project-2.git]
+
+# ETL Movies Project Proposal
+
+### GitHub repo:	
+https://github.com/Shaloomi/Project-2.git
+
+### Data sources: 
+Both data sources are .csv files from kaggle.com.
+The first dataset we are utilising for this project is the academy awards from 1927 to 2015:
+https://www.kaggle.com/datasets/theacademy/academy-awards
+
+The second dataset we are utilising is a list of the 1000 most popular shows and movies in IMDBs movie database:
+https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows?resource=download
+
+### Our pipeline:
+We are extracting the data from both .csv files using the pandas library. We are also transforming the data using the pandas library. Then using pyalchemy we are loading the data into our relational SQL database PostgreSQL.
+
+### Final data structure:
+Relational SQL database using PGAdmin
+
+### Descriptions of findings:
+In data we had found that many of the movies awarded academy awards did match many of the IMDB top movies. However, some academy data had to be removed as they were tv shows or songs that did not match the IMDB data set. In the end we could join 460 academy nominations to the IMDB data set providing extra detail on each movie.
+
+### Responsibilities:
+
+#### Udeshi:
+- Readme
+- End report
+
+#### Perry:
+- Read in csv
+- Query to create tables in PGAdmin
+
+#### Josh:
+- Transform pandas
+- Create table schema
+
