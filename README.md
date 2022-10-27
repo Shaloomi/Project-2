@@ -2,7 +2,7 @@
 # ETL - Extract, Transform and Load
 *An ETL Movies Analysis using Python, RegEx and SQL Databases*
 
-<img src="Resources/Image6.png" alt="Image6.png" width="110" height="70"> 
+<img src="Resources/Image6.png" alt="Image6.png" width="770" height="530"> 
 
 ## Project Overview
 
@@ -16,7 +16,7 @@ Raw data exists in multiple places and forms. In order to perform any kind of da
 
 The purpose of this project was to create an automated pipeline that takes in new data, performs the appropriate transformations, and loads the data into existing tables that is connected to a database. The chosen topic is all about Movies from 1927-2015 and the information from 2 different resources.
 
-<img src="Resources/Image1.png" alt="Image1" width="110" height="70"> 
+<img src="Resources/Image1.png" alt="Image1" width="770" height="530"> 
 
 An exercise in performing an Extract, Transform, Load (ETL) process to create data pipelines using Python, Pandas and PostgreSQL using very large data files.
 
@@ -24,7 +24,7 @@ This project builds on by performing ETL on two CSV files that contain
 - What actors and films have received the most Oscars
 - Top 1000 Movies by IMDB Rating
 
-<img src="Resources/Image2.png" alt="Image1" width="110" height="70"> 
+<img src="Resources/Image2.png" alt="Image1" width="770" height="530"> 
 
 
 
@@ -127,16 +127,16 @@ Create an ETL pipeline using Jupyter Notebooks and PostgreSQL from raw data to S
 	* Deleting bad data (corrupted or missing), removing duplicate rows, and consolidating columns.
 	* Using RegEx to parse data and transform text into numbers.
 
-<img src="Resources/Image3.png" alt="Image1" width="110" height="70"> 
+<img src="Resources/Image3.png" alt="Image1" width="770" height="530"> 
 
 * **Load:** Export transformed data into a database.
 
 ## Results
-<img src="Resources/Image4.png" alt="Image1" width="110" height="70"> 
+<img src="Resources/Image4.png" alt="Image1" width="770" height="530"> 
 
 We were able to clean, merge the datasets and export the two new tables into PostgreSQL by using Python. 
 
-<img src="Resources/Image5.png" alt="Image1" width="110" height="70"> 
+<img src="Resources/Image5.png" alt="Image1" width="770" height="530"> 
 
 ## Summary
 
