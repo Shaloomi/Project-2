@@ -54,66 +54,40 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/Shaloomi/Project-2.git
    ```
-2. Open pgAmin and create a new database called 
-   ```js
-   ...................
+2. Create a config.py file 
+
+3. Inside config.py copy below code and enter your relevant data
+   ```sh
+   protocol = "postgresql"
+   username = "<your username here>"
+   password = "<your password here>"
+   host = "<your host hear (localhost for local)>"
+   port = "<your port here>"
+   database_name = "movie_db"
    ```
-3. Right click on the sql-challenge database and click on `Query tool`
-   
-4. Within the Query Tool, open and run file called `schema` located
+4. Open pgAmin and create a new database called 
    ```js
-   Where_you_cloned_the_repo + \............\queries.sql\schema
+   movie_db
    ```
-
-    You now have your tables and columns created. We will next step over how to read in your csv files.
-
-### Note: You will need to import data into the tables in the following order.
-
-    * Year
-    * Ceremony
-    * Award
-    * Winner
-    * Name
-    * Film
-
-5. Expand the sql-challenge databse, then Schemas, public and then Tables
-
-6. Right click on the table then select Import/Export Data
-
-7. In this window click on Options and make sure Header is selected
-
-8. Click on General and then click on the file name
-
-9. Locate the applicable csv relatined to the table you have selected ie. If you have slected departments as the table you need to select departments as the csv file.
-
-10. Then click OK
-
-11. Repeat ths process for all tables ensuring you complete this in the correct order.
-
-
-Before we can run our analysis we have to run a query to convert text to date.
-
-
-12. Right click on the sql-challenge database and click on `Query tool`
+5. Right click on the movie_db database and click on `Query tool`
    
-13. Within the Query Tool, open and run file called `convert_text_to_date` located
+6. Within the Query Tool, open and run file called `queries` located
    ```js
-   Where_you_cloned_the_repo + \...........\queries.sql\convert_text_to_date
-```
+   Where_you_cloned_the_repo + \............\queries.sql
+   ```
+## Prerequisites
+   ```sh
+   pip install pandas
+   pip install sqlalchemy
+   pip install numpy
+   ```
+## Run notebook
+1. Open file called etl_project.ipynb
+2. Refresh and clear the kernal
+3. Click run all
 
-Lastly we run our analysis query
+Results will be displayed. 
 
-14. Right click on the ............. database and click on `Query tool`
-   
-15. Within the Query Tool, open and run file called `queries` located
-   ```js
-   Where_you_cloned_the_repo + \...........\queries.sql\queries
-```
-
-<!-- Creators -->
-## Creators
-
-Josh Martin, Peregrin Rayan, Udeshi Pereira - [https://github.com/Shaloomi/Project-2.git]
 
 ## Process
 
@@ -142,9 +116,13 @@ We were able to clean, merge the datasets and export the two new tables into Pos
 
 Overall, this was a very dense topic to learn and complete in one week. The process of reviewing the data and knowing what to "clean" was challenging, including cross comparison between the datasets, as well as, learning how to use RegEx to parse the text. We expect that to become an expert in ETL, especially RegEx outside of class would require extensive practice and application using real-life examples. We are hoping that with time, we can apply this learning to prepare large datasets for analysis.  
 
-## Resources
+## Citing and referencing
+
 * **Software:** Python 3.7.9, Anaconda 4.9.2, Jupyter Notebooks 6.1.4, PostgreSQL 4.28
 * **Libraries:** Pandas, SQLAlchemy, NumPy
 
-## Troubleshooting
 
+<!-- Creators -->
+## Creators
+
+Josh Martin, Peregrin Rayan, Udeshi Pereira - [https://github.com/Shaloomi/Project-2.git]
