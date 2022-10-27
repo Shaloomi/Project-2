@@ -2,10 +2,10 @@ CREATE TABLE "imdb_top_1000" (
     "film_name" VARCHAR(1050),
     "released_year" INT,
     "runtime" VARCHAR(30),
-    "genre" VARCHAR(50),
+    "genre" VARCHAR(1050),
     "imdb_rating" INT,
     "meta_score" INT,
-    "director" VARCHAR(50),
+    "director" VARCHAR(1050),
     "actors" VARCHAR(1050),
     "votes" BIGINT,
     "gross" money,
@@ -17,9 +17,9 @@ CREATE TABLE "imdb_top_1000" (
 CREATE TABLE "academy_award_data" (
     "film_name" VARCHAR(1050),
     "ceremony_year" INT,
-    "award" VARCHAR(50),
+    "award" VARCHAR(1050),
     "winner" boolean,
-    "winner_name" VARCHAR(50)
+    "winner_name" VARCHAR(1050)
 );
 
 ALTER TABLE "academy_award_data" ADD CONSTRAINT "fk_academy_award_data_film_name" FOREIGN KEY("film_name")
