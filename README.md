@@ -2,7 +2,7 @@
 # ETL - Extract, Transform and Load
 *An ETL Movies Analysis using Python, RegEx and SQL Databases*
 
-<img src="Resources/Images.jpeg" alt="Images.jpeg" width="110" height="70"> 
+<img src="Resources/Image6.png" alt="Image6.png" width="110" height="70"> 
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ Raw data exists in multiple places and forms. In order to perform any kind of da
 <!-- ABOUT THE PROJECT -->
 # Movies-ETL
 
-The purpose of this project was to create an automated pipeline that takes in new data, performs the appropriate transformations, and loads the data into existing tables that is connected to a database. The chosen topic is all about Movies from 1990 to 2018 and combining the information from 2 different resources.
+The purpose of this project was to create an automated pipeline that takes in new data, performs the appropriate transformations, and loads the data into existing tables that is connected to a database. The chosen topic is all about Movies from 1927-2015 and the information from 2 different resources.
 
 <img src="Resources/Image1.png" alt="Image1" width="110" height="70"> 
 
