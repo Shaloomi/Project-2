@@ -110,7 +110,7 @@ Create an ETL pipeline using Jupyter Notebooks and PostgreSQL from raw data to S
 
 We were able to clean, merge the datasets and export the two new tables into PostgreSQL by using Python. 
 
-<img src="Resources/Image5.png" alt="Image1" width="770" height="530"> 
+<img src="Resources/final_join.PNG" alt="final_join.PNG" width="770" height="530"> 
 
 ## Summary
 
@@ -120,7 +120,8 @@ Overall, this was a very dense topic to learn and complete in one week. The proc
 
 * **Software:** Python 3.7.9, Anaconda 4.9.2, Jupyter Notebooks 6.1.4, PostgreSQL 4.28
 * **Libraries:** Pandas, SQLAlchemy, NumPy
-
+* **Data Sources:** IMDB data: 'https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows?resource=download' (25/10/2020), 
+                  Academy: 'https://www.kaggle.com/datasets/theacademy/academy-awards'(25/10/2020)
 
 <!-- Creators -->
 ## Creators
